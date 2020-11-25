@@ -32,47 +32,68 @@ public class NumberOfDaysInMonth {
 
         switch (month) {
             case 1:
-                System.out.println("31");
-                break;
+                return 31;
+               
             case 2:
-                if((month == 2) && LeapYearCalculator.isLeapYear(year)){
-                    System.out.println("29");
+                if((month == 2) && isLeapYear(year)){
+                   return 29;
                 } else
-                System.out.println("28");
-                break;
+                return 28;
+            
             case 3:
-                System.out.println("31");
-                break;
+                return 31;
+               
             case 4:
-                System.out.println("30");
-                break;
+                return 30;
+            
             case 5:
-                System.out.println("31");
-                break;
-            case 6:
-                System.out.println("30");
-                break;
+                return 31;
+                            case 6:
+                return 30;
+               
             case 7:
-                System.out.println("31");
-                break;
+                return 31;
+                
             case 8:
-                System.out.println("31");
-                break;
+                return 31;
+                
             case 9:
-                System.out.println("30");
-                break;
+               return 30;
+               
             case 10:
-                System.out.println("31");
-                break;
+                return 31;
+               
             case 11:
-                System.out.println("30");
-                break;
+                return 30;
+               
             case 12:
-                System.out.println("31");
-                break;
+                return 31;
+               
         }
 
-        System.out.println("1");
+       
         return 0;
     }
+
+
+    public static boolean isLeapYear(int year) {
+
+        if ((year > 0) && (year < 9999)) {
+            if (year % 4 != 0) {
+                
+                return false;
+            } else if (year % 400 == 0) {
+               
+                return true;
+            } else if (year % 100 == 0) {
+                
+                return false;
+            } else
+              
+                return true;
+        }
+       
+        return false;
+    }
+
 }
